@@ -1,59 +1,45 @@
 <!DOCTYPE html>
-<html>    
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="HandheldFriendly" content="true">
-        <title>Rock Paper Scissors</title>
-        <link rel="stylesheet" href="stylesheet.css">
-    </head>
-<body>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script type="text/javascript" src="rocPaprSci.js"></script>
+  </head>
+  <body>
+    <h1>There will be only one way to settle the score...</h1>
 
-<h1>There will be only one way to settle the score...</h1>
+    <h1>... a simple game of rock, paper scissors</h1>
 
-<h1>... a simple game of rock, paper scissors</h1>
+    <h2>Choose your weapon wisely</h2>
 
+    <li>
+      <ul>
+        <button onclick="startGame('Rock')">
+          <!--<img src="assets/rock-pap.jpg" alt="Rock vs Paper" />-->
+          Rock
+        </button>
+      </ul>
+      <ul>
+        <button onclick="startGame('Paper')">
+          <!-- <img src="assets/rock-scissors.jpg" alt="Rock vs Scissors" /> -->
+          Paper
+        </button>
+      </ul>
+      <ul>
+        <button onclick="startGame('Scissors')">
+          <!-- <img src="assets/rps1.jpg" alt="Scissors vs Paper" /> -->
+          Scissors
+        </button>
+      </ul>
+    </li>
 
-<h2> Choose your weapon wisely</h2>
-
-
-<li>
-    <ul> <img src="assets/rock-pap.jpg" alt="Rock vs Paper"> </ul>
-    <ul> <img src="assets/rock-scissors.jpg" alt="Rock vs Scissors"> </ul>
-    <ul> <img src="assets/rps1.jpg" alt="Scissors vs Paper"> </ul>
-</li>
-
-
-<h3>You</h3>
-<h3>Computer</h3>
-
-<script>
-
-let
-
-
-switch (onClick) {
-    case playerSelection == rock && computerSelection == rock:
-        alert("It's a tie");
-        break;
-    case playerSelection == rock && computerSelection == paper:
-        alert("You lose, paper beats rock");
-        break;
-    case playerSelection == rock && computerSelection == scissors:
-        alert("You win! Rock beats scissors!");
-}
-
-let randomSelection = ['Rock', 'Paper', 'Scissors'];
-
-let computerSelection = randomSelection[Math.floor(Math.random()*randomSelection.length)];
-
-
-
-
-// On click, return random computerSelection. Tally the score and print game outcome message
-
-
-</script> 
-
-</body>
+    <h3>You</h3>
+    <h3>Computer</h3>
+  </body>
 </html>
