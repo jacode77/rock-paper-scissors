@@ -9,6 +9,12 @@
     <meta name="HandheldFriendly" content="true" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
     <script type="text/javascript" src="rocPaprSci.js"></script>
   </head>
   <body>
@@ -20,26 +26,35 @@
 
     <li>
       <ul>
-        <button onclick="startGame('Rock')">
-          <!--<img src="assets/rock-pap.jpg" alt="Rock vs Paper" />-->
-          Rock
-        </button>
+        <img src="assets/Rock.jpg" onclick="startGame('Rock')" />
+        <!--<img src="assets/rock-pap.jpg" alt="Rock vs Paper" />-->
+        <p>Rock</p>
       </ul>
       <ul>
-        <button onclick="startGame('Paper')">
-          <!-- <img src="assets/rock-scissors.jpg" alt="Rock vs Scissors" /> -->
-          Paper
-        </button>
+        <img src="assets/Paper.jpg" onclick="startGame('Paper')" />
+        <!-- <img src="assets/rock-scissors.jpg" alt="Rock vs Scissors" /> -->
+        <p>Paper</p>
       </ul>
       <ul>
-        <button onclick="startGame('Scissors')">
-          <!-- <img src="assets/rps1.jpg" alt="Scissors vs Paper" /> -->
-          Scissors
-        </button>
+        <img src="assets/Scissors.jpg" onclick="startGame('Scissors')" />
+        <!-- <img src="assets/rps1.jpg" alt="Scissors vs Paper" /> -->
+        <p>Scissors</p>
       </ul>
     </li>
 
-    <h3>You</h3>
-    <h3>Computer</h3>
+    <li class="tally">
+      <ul>
+        Player Score
+      </ul>
+      <ul>
+        Computer Score
+      </ul>
+      <ul id="playerOutcome"></ul>
+      <ul id="computerOutcome"></ul>
+    </li>
+
+    <h3>Outcome</h3>
+    <p id="outcome"></p>
+    <!--    <h3>Computer</h3> -->
   </body>
 </html>

@@ -17,7 +17,8 @@ function getRandomSelection() {
 function findWinner(playerSelection, computerSelection) {
   //if playerSelection and computerSelection === same, "it's a tie"
   if (playerSelection === computerSelection) {
-    return "It's a tie!";
+    //return "It's a tie!";
+    return (document.getElementById("outcome").innerHTML = "It's a tie");
   }
 
   //if playerSelection is paper and computerSelection is rock, "The winner is player"
@@ -26,11 +27,22 @@ function findWinner(playerSelection, computerSelection) {
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    return "Player wins!";
+    // return "Player wins!";
+    return (document.getElementById("outcome").innerHTML = "Player wins!");
   }
 
-  return "Computer wins, too bad.";
+  //return "Computer wins, too bad.";
+  return (document.getElementById("outcome").innerHTML =
+    "Computer wins, too bad.");
 }
+
+const PO = document.querySelector("playerOutcome");
+const para1 = document.createElement("ul");
+para1.textContent = playerSelection;
+
+const CO = document.querySelector("computerOutcome");
+const para2 = document.createElement("ul");
+para2.textContent = computerSelection;
 
 // let playerSelection = onclick //how to assign onclick to images?
 
