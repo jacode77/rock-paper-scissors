@@ -18,43 +18,51 @@
     <script type="text/javascript" src="rocPaprSci.js"></script>
   </head>
   <body>
-    <h1>There will be only one way to settle the score...</h1>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+    <div>
+      <h2 id="outcome">Score</h2>
+      <p id="overallWinner"></p>
+      <p class="tally">Player:</p>
+      <p id="playerOutcome" class="tally"></p>
+      <p class="tally">Computer:</p>
+      <p id="computerOutcome" class="tally"></p>
+    </div>
 
-    <h1>... a simple game of rock, paper scissors</h1>
-
-    <h2>Choose your weapon wisely</h2>
-
-    <li>
-      <ul>
-        <img src="assets/Rock.jpg" onclick="startGame('Rock')" />
-        <!--<img src="assets/rock-pap.jpg" alt="Rock vs Paper" />-->
+    <div class="button-container">
+      <div class="image-container">
+        <img
+          src="assets/Rock.jpg"
+          alt="Rock"
+          onclick="startGame('Rock')"
+          id="selection"
+        />
         <p>Rock</p>
-      </ul>
-      <ul>
-        <img src="assets/Paper.jpg" onclick="startGame('Paper')" />
-        <!-- <img src="assets/rock-scissors.jpg" alt="Rock vs Scissors" /> -->
+      </div>
+      <div class="image-container">
+        <img
+          src="assets/Paper.jpg"
+          alt="Paper"
+          onclick="startGame('Paper')"
+          id="selection"
+        />
         <p>Paper</p>
-      </ul>
-      <ul>
-        <img src="assets/Scissors.jpg" onclick="startGame('Scissors')" />
-        <!-- <img src="assets/rps1.jpg" alt="Scissors vs Paper" /> -->
+      </div>
+      <div class="image-container">
+        <img
+          src="assets/Scissors.jpg"
+          alt="Scissors"
+          onclick="startGame('Scissors')"
+          id="selection"
+        />
         <p>Scissors</p>
-      </ul>
-    </li>
+      </div>
+    </div>
 
-    <li class="tally">
-      <ul>
-        Player Score
-      </ul>
-      <ul>
-        Computer Score
-      </ul>
-      <ul id="playerOutcome"></ul>
-      <ul id="computerOutcome"></ul>
-    </li>
-
-    <h3>Outcome</h3>
-    <p id="outcome"></p>
-    <!--    <h3>Computer</h3> -->
+    <div class="matchRoundContainer">
+      <p class="matchRound">Round No:</p>
+      <p class="matchRound" id="roundNumber"></p>
+    </div>
   </body>
 </html>

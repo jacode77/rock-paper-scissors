@@ -1,64 +1,63 @@
+let roundNumber = 1;
+let playerScore = 0;
+let computerScore = 0;
+
 function startGame(playerSelection) {
+  if (roundNumber > 5) {
+    return;
+  }
+
   let computerSelection = getRandomSelection();
-  console.log("Player Chose: ", playerSelection);
-  console.log("Computer Seletion: ", computerSelection);
-  let winner = findWinner(playerSelection, computerSelection);
-  console.log("The winner is: ", winner);
+  let winner = getWinner(playerSelection, computerSelection);
+  document.getElementById("playerOutcome").innerHTML = playerScore;
+  document.getElementById("computerOutcome").innerHTML = computerScore;
+  document.getElementById("roundNumber").innerHTML = roundNumber;
+  roundNumber++;
+
+  if (roundNumber > 5) {
+    let overallWinner = getOverallWinner(playerScore, computerScore);
+    document.getElementById("overallWinner").innerHTML = overallWinner;
+    confirm(overallWinner + " Refresh the page to play again");
+  }
+  return;
 }
 
 function getRandomSelection() {
-  let randomSelection = ["Rock", "Paper", "Scissors"];
+  let options = ["Rock", "Paper", "Scissors"];
 
-  let computerSelection =
-    randomSelection[Math.floor(Math.random() * randomSelection.length)];
-  return computerSelection;
+  let randomSelection = options[Math.floor(Math.random() * options.length)];
+  document.getElementById("computerOutcome").innerHTML = randomSelection;
+  return randomSelection;
 }
 
-function findWinner(playerSelection, computerSelection) {
-  //if playerSelection and computerSelection === same, "it's a tie"
+function getWinner(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    //return "It's a tie!";
-    return (document.getElementById("outcome").innerHTML = "It's a tie");
+    document.getElementById("outcome").innerHTML = "It's a tie";
+    return "It's a tie";
   }
 
-  //if playerSelection is paper and computerSelection is rock, "The winner is player"
   if (
     (playerSelection === "Paper" && computerSelection === "Rock") ||
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    // return "Player wins!";
-    return (document.getElementById("outcome").innerHTML = "Player wins!");
+    document.getElementById("outcome").innerHTML = "Player wins!";
+    playerScore++;
+    return "Player wins!";
   }
 
-  //return "Computer wins, too bad.";
-  return (document.getElementById("outcome").innerHTML =
-    "Computer wins, too bad.");
+  document.getElementById("outcome").innerHTML = "Computer wins, too bad.";
+  computerScore++;
+  return "Computer wins, too bad.";
 }
 
-const PO = document.querySelector("playerOutcome");
-const para1 = document.createElement("ul");
-para1.textContent = playerSelection;
+function getOverallWinner(playerScore, computerScore) {
+  if (playerScore === computerScore) {
+    return "How embarassing, it's a tie...";
+  }
 
-const CO = document.querySelector("computerOutcome");
-const para2 = document.createElement("ul");
-para2.textContent = computerSelection;
-
-// let playerSelection = onclick //how to assign onclick to images?
-
-// function playRound(playerSelection, computerSelection) {
-
-// }
-
-// switch (playerSelection) {
-//     case 'Tie': playerSelection === rock && computerSelection === rock;
-//         return "It's a tie"; //Not sure if alert or a simple return is better
-//         break;
-//     case 'Lose': playerSelection === rock && computerSelection === paper;
-//         return "You lose, paper beats rock";
-//         break;
-//     case 'Win': plaerSelection === rock && computerSelection === scissors;
-//         return "You win! Rock beats scissors!";
-// }
-
-// On click, return random computerSelection. Tally the score and print game outcome message
+  if (playerScore > computerScore) {
+    return "You are the winner!";
+  }
+  return "Computer wins, too bad.";
+}
