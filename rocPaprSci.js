@@ -31,24 +31,30 @@ function getRandomSelection() {
 }
 
 function getWinner(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection) {
-    document.getElementById("outcome").innerHTML = "It's a tie";
-    return "It's a tie";
-  }
+  while (roundNumber < 5) {
+    if (playerSelection === computerSelection) {
+      document.getElementById("outcome").innerHTML = "It's a tie";
+      return "It's a tie";
+    }
 
-  if (
-    (playerSelection === "Paper" && computerSelection === "Rock") ||
-    (playerSelection === "Rock" && computerSelection === "Scissors") ||
-    (playerSelection === "Scissors" && computerSelection === "Paper")
-  ) {
-    document.getElementById("outcome").innerHTML = "Player wins!";
-    playerScore++;
-    return "Player wins!";
-  }
+    if (
+      (playerSelection === "Paper" && computerSelection === "Rock") ||
+      (playerSelection === "Rock" && computerSelection === "Scissors") ||
+      (playerSelection === "Scissors" && computerSelection === "Paper")
+    ) {
+      document.getElementById("outcome").innerHTML = "Player wins!";
+      playerScore++;
+      return "Player wins!";
+    }
 
-  document.getElementById("outcome").innerHTML = "Computer wins, too bad.";
-  computerScore++;
-  return "Computer wins, too bad.";
+    document.getElementById("outcome").innerHTML = "Computer wins, too bad.";
+    computerScore++;
+    return "Computer wins, too bad.";
+  }
+  if (roundNumber === 5) {
+    document.getElementById("outcome").innerHTML = null;
+    return null;
+  }
 }
 
 function getOverallWinner(playerScore, computerScore) {
